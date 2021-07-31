@@ -1,0 +1,19 @@
+a.tile {
+	margin: 10px;
+	padding: 10px;
+	width: calc(25% - 40px);
+	background-color: white;
+	border-radius: 4px;
+}
+
+@media screen and (max-width: 800px) {
+	.tile {
+		width: calc(33% - 40px);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.tile {
+		width: calc(50% - 40px);
+	}
+}

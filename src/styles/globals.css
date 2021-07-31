@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	font-family:'Segoe UI', 'Roboto', 'Helvetica Neue',
+		sans-serif;
+}
+
+a {
+	text-decoration: none;
+	width:auto;
+	color:#000000;
+}
