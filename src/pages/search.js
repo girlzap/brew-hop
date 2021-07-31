@@ -4,14 +4,15 @@ import Link from 'next/link'
 import { useAppData } from '../context/state'
 import useSearch from '../hooks/useSearch'
 
+import Tile from '../components/tile/tile'
+
 
 const Search = () => {
-	const [all] = useAppData()
+	const [state] = useAppData()
 
 	const getSearchResults = useSearch()
-	const [results, setResults] = useState([])
 
-	console.log(all.searchResults)
+	console.log(state.searchResults)
 
 	let searchInput = ''
 
@@ -29,7 +30,9 @@ const Search = () => {
 				Search for a keyword
 				<input onChange={(e) => captureChange(e)} />
 				<button onClick={searchSubmit}>Search</button>
-				{JSON.stringify(all.searchResults)}
+				{state.searchResults?.slice(0, 12).map((breweryEntry) => {
+					return <Tile key={breweryEntry.id} tileData={breweryEntry} />
+				})}
 
 
 			</div>

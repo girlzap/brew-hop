@@ -11,6 +11,7 @@ export default function Post() {
 	const { id } = router.query
 
 	//TODO: move to a hook and pull from state
+	//TODO: determine if the results are being displayed via home or search page, back to... should respect this. 
 	useEffect(() => {
 		if (id) {
 			fetch('https://api.openbrewerydb.org/breweries/' + id)
