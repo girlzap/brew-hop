@@ -1,15 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 
-import tileStyles from './tile.module.css'
+import tileStyles from './Tile.module.css'
 
 const Tile = ({tileData}) => {
 	return (
 		
-		<Link href={`/details/${tileData}`}>
+		<Link href={`/details/${tileData.id}`}>
 			<a className={tileStyles.tile}>
 			<div>
-				Tile element, can be re-used. Should take in its data as a prop. 
+				{tileData.name}
 			</div>
 			</a>
 		</Link>
