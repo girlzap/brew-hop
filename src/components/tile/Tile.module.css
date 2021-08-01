@@ -5,7 +5,9 @@ a.tile {
 	height: 100px;
 	background-color: white;
 	border-radius: 4px;
+	text-align:center;
 }
+
 
 @media screen and (max-width: 800px) {
 	a.tile {

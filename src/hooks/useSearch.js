@@ -17,7 +17,7 @@ const useSearch = () => {
 			})
 			.catch((error) => {
 				console.error(error.message);
-				alert("There was an error fetching the data");
+				console.warn("There was an error fetching the search results.");
 			});
 
 	}

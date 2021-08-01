@@ -1,7 +1,7 @@
 # Brew Hop
 Brew Hop displays a featured brewery, search capability to locate a brewery based on a keyword, and a sortable list of brewerys based on type. 
 
-The featured brewery is selected randomly based on the users location. If location services are blocked on the browser a random brewery in Massachussetts will be featured instead. 
+The featured brewery is selected randomly based on the users location. If location services are blocked on the browser a random brewery in Massachusetts will be featured instead. 
 
 The search feature allows a keyword to be used to display results in which this keyword appears. 
 

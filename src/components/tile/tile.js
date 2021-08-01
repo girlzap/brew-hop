@@ -8,9 +8,9 @@ const Tile = ({tileData}) => {
 		
 		<Link href={`/details/${tileData.id}`}>
 			<a className={tileStyles.tile}>
-			<div>
-				{tileData.name}
-			</div>
+				<div>
+					{tileData.name}
+				</div>
 			</a>
 		</Link>
 		

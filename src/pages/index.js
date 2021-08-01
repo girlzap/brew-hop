@@ -4,16 +4,15 @@ import Link from 'next/link'
 
 import { useAppData } from '../context/state'
 import useType from '../hooks/useType'
-import Tile from '../components/tile/tile'
-import BreweryDetails from '../components/breweryDetails/breweryDetails'
+
+import {Tile, BreweryDetails} from '../components'
 
 import styles from '../styles/Home.module.css'
-
 
 //TODO: add layout to simplify the back button on search and details pages
 
 export default function Home() {
-	const [state] = useAppData()
+	const [{featured, typeResults}] = useAppData()
 	const getTypeResults = useType()
 
 	useEffect(()=>{
@@ -24,7 +23,7 @@ export default function Home() {
 		getTypeResults(option)
 	}
 
-	let pubTypes = ['micro', 'nano', 'regional', 'brewpub', 'planning', 'contract', 'proprietor']
+	let breweryTypes = ['micro', 'nano', 'regional', 'brewpub', 'planning', 'contract', 'proprietor']
 
 	return (
 		<div className={styles.container}>
@@ -35,21 +34,23 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<section className={styles.search}>
+				<h1>Brew Hop</h1>
+				<section className='search'>
 					Have something in mind?
 					<Link href="/search">
 						<a className={styles.searchButton}>Search</a>
 					</Link>
 				</section>
 
-				<section className={styles.featured}>
-					<BreweryDetails detailData={state.featured} />
+				<section className='featured'>
+					<h2>Featured Brewery</h2>
+					<BreweryDetails detailData={featured} />
 				</section>
 
-				<section className={styles.tiles}>
+				<section className='tiles'>
 					Select a brewery type
 					<div className={styles.types}>
-						{pubTypes.map((type) => (
+						{breweryTypes.map((type) => (
 							<div
 								className={styles.typeItem}
 								key={type}
@@ -59,8 +60,8 @@ export default function Home() {
 							</div>
 						))}
 					</div>
-					<div className={styles.tilesContainer}>
-						{state.typeResults?.slice(0,12).map((breweryEntry)=>{
+					<div className='tilesContainer'>
+						{typeResults?.slice(0,12).map((breweryEntry)=>{
 							return <Tile key={breweryEntry.id} tileData={breweryEntry} />
 						})}
 

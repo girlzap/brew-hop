@@ -4,15 +4,12 @@ import Link from 'next/link'
 import { useAppData } from '../context/state'
 import useSearch from '../hooks/useSearch'
 
-import Tile from '../components/tile/tile'
-
+import {Tile} from '../components'
 
 const Search = () => {
-	const [state] = useAppData()
+	const [{searchResults}] = useAppData()
 
 	const getSearchResults = useSearch()
-
-	console.log(state.searchResults)
 
 	let searchInput = ''
 
@@ -23,22 +20,42 @@ const Search = () => {
 	const searchSubmit = () => {
 		getSearchResults(searchInput)
 	}
-	//TODO: use tiles here to map through the results
+
 	return (
 		<>
 			<div>
-				Search for a keyword
-				<input onChange={(e) => captureChange(e)} />
-				<button onClick={searchSubmit}>Search</button>
-				{state.searchResults?.slice(0, 12).map((breweryEntry) => {
-					return <Tile key={breweryEntry.id} tileData={breweryEntry} />
-				})}
+				<h1>Search for Breweries</h1>
+				<Link href="/">
+					<a>← Back to home</a>
+				</Link>
+				<section className='search'>
+					<label 
+						htmlFor="search-input" 
+						aria-labelledby="search-input"
+					>
+						Search for a keyword:
+					</label>
+					<input 
+						onChange={(e) => captureChange(e)} 
+						id="search-input" 
+						name="search-input"
+					/>
 
+					<button onClick={searchSubmit}>
+						Search
+						</button>
+					</section>
+
+				<section className="tiles">
+					<div className={'tilesContainer'}>
+						{searchResults?.map((breweryEntry) => {
+							return <Tile key={breweryEntry.id} tileData={breweryEntry} />
+						})}
+					</div>
+				</section>
 
 			</div>
-			<Link href="/">
-				<a>← Back to home</a>
-			</Link>
+
 		</>
 	);
 };

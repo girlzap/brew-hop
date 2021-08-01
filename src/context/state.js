@@ -1,7 +1,8 @@
-import { createContext, useContext, useEffect, useState, useReducer } from 'react'
+import { createContext, useContext, useEffect, useReducer } from 'react'
 
 const AppContext = createContext()
 
+//TODO: include ready state value
 
 //reducer
 const AppDataReducer = (state, action) => {
@@ -55,7 +56,6 @@ const AppWrapper = ({ children }) => {
 	}, [])
 
 	useEffect(() => {
-		console.log('find featured')
 		let apiType = 'https://api.openbrewerydb.org/breweries'
 		if (state.coords) {
 			apiType = 'https://api.openbrewerydb.org/breweries?by_dist=' + state.coords.lat + ',' + state.coords.long
@@ -74,7 +74,7 @@ const AppWrapper = ({ children }) => {
 			})
 			.catch((error) => {
 				console.error(error.message);
-				alert("There was an error fetching the data");
+				console.warn("There was an error fetching the featured brewery.");
 			});
 	}, [state.coords])
 
