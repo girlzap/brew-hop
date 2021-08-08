@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
-import {BreweryDetails, Tile} from '../../components'
-
+import {BreweryDetails, Layout} from '../../components'
 
 export default function Post() {
 	const [details, setDetails] = useState([])
@@ -33,30 +31,24 @@ export default function Post() {
 	}, [id])
 
 	return (
-		<>
-			<h1>Brewery Details</h1>
-			<Link href="/">
-				<a>← Back to home</a>
-			</Link>
-			<div>
-				{loading && <div>Loading...</div>}
-				{!loading && (
-					<>
-						<section className="featured">
-							<BreweryDetails detailData={details} />
-						</section>
-						<section>
-							Similar
-						</section>
-						<section>
-							Nearby
-						</section>
-					</>
-				)}
-
-			</div>
-
-		</>
+		<Layout>
+		<h1>Brewery Details</h1>
+		
+			{loading && <div>Loading...</div>}
+			{!loading && (
+				<>
+					<section>
+						<BreweryDetails detailData={details} />
+					</section>
+					<section>
+						Similar
+					</section>
+					<section>
+						Nearby
+					</section>
+				</>
+			)}
+		</Layout>
 	)
 }
 
