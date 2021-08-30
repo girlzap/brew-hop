@@ -1,20 +1,13 @@
-.main {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.featured{
+	border:1px dotted rgba(255,255,255,0.5);
 }
 
-.searchButton{
-	margin:10px;
-	padding:6px 12px;
-	background-color:#68a242;
-	color:#000000;
-	font-weight:700;
+.featured h5 {
+	color:#ffffff;
+	font-family: 'Lato';
+	font-style: italic;
 	letter-spacing: .5px;
-	cursor:pointer;
+	margin:0;
 }
 
 .types{
@@ -23,17 +16,29 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin-top:10px;
-	padding:0 10px;
+	/* padding:0 10px; */
 }
 
 .typeItem {
 	padding:4px 8px;
-	background-color:#68a242;
+	border:1px solid #ffffff;
 	cursor:pointer;
-	color:#000000;
+	color:#ffffff;
 	text-transform: uppercase;
 	font-size:12px;
-	font-weight:700;
+	font-style: italic;
+	border-radius: 2px;
+}
+
+.active{
+	padding:4px 8px;
+	background-color:rgba(0,0,0,0.5);
+	cursor:pointer;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-size:12px;
+	font-style: italic;
+	border-radius: 2px;
 }
 
 @media screen and (max-width: 500px) {

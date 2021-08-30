@@ -1,0 +1,28 @@
+.breweryDeatilsMain {
+	color:#ffffff;
+	display:flex;
+	justify-content: space-between;
+}
+
+.minor{
+	opacity: .5;
+	text-align:right;
+	font-size:11px;
+}
+
+.name{
+	font-family: 'Lobster';
+	color:#ffffff;
+	font-size:2em;
+}
+
+@media screen and (max-width: 800px) {
+	.breweryDeatilsMain{
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.minor{
+		text-align:left;
+		margin-top:10px;
+	}
+}
