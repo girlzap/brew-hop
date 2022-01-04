@@ -22,23 +22,20 @@ const Search = () => {
 
 	return (
 		<Layout search>
-			<h1>Search for Breweries</h1>				
+			<h1>Search for Breweries</h1>
 			<section className='search'>
-				<label
-					htmlFor="search-input"
-					aria-labelledby="search-input"
-				>
-					Search for a keyword:
-				</label>
+
 				<input
 					onChange={(e) => captureChange(e)}
 					id="search-input"
 					name="search-input"
+					placeholder="Enter search term"
 				/>
 
-				<button onClick={searchSubmit}>
-					Search
+				<button onClick={searchSubmit} className="search-btn">
+					<img src="../arrow-right.svg" alt="search arrow" />
 				</button>
+
 			</section>
 
 			<section className="tiles">

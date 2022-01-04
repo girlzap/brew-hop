@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import {BreweryDetails, Layout} from '../../components'
+import { BreweryDetails, Layout } from '../../components'
 
 export default function Post() {
 	const [details, setDetails] = useState([])
@@ -32,20 +32,20 @@ export default function Post() {
 
 	return (
 		<Layout>
-		<h1>Brewery Details</h1>
-		
+			<h1>Brewery Details</h1>
+
 			{loading && <div>Loading...</div>}
 			{!loading && (
 				<>
 					<section>
 						<BreweryDetails detailData={details} />
 					</section>
-					<section>
+					{/* <section>
 						Similar
 					</section>
 					<section>
 						Nearby
-					</section>
+					</section> */}
 				</>
 			)}
 		</Layout>
