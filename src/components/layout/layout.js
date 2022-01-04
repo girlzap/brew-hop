@@ -24,7 +24,7 @@ const Layout = ({ children, home, search }) => {
 				)}
 				{!home && (
 					<Link href="/">
-						<a>← Back to home</a>
+						<a style={{ margin: '10px', }}>← Back to home</a>
 					</Link>
 				)}
 			</header>
