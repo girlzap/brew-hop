@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 
 import { useAppData } from '../context/state'
 import useSearch from '../hooks/useSearch'
@@ -33,7 +34,12 @@ const Search = () => {
 				/>
 
 				<button onClick={searchSubmit} className="search-btn">
-					<img src="../arrow-right.svg" alt="search arrow" />
+					<Image
+						src="../arrow-right.svg"
+						alt="Search arrow"
+						width={50}
+						height={50}
+					/>
 				</button>
 
 			</section>
